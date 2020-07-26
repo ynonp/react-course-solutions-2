@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 
 export default function SearchTextBox(props)
 {
     const {hendleSearchText} = props;
-    
+    const [val,setval] = useState('');
     function onSearchTextHendleChange(e){
-        const txt = e.target.value
-        hendleSearchText(txt);
+      
+        const newVal=e.target.value
+        setval(val => newVal);
+        hendleSearchText(newVal);
+        
     }
 
     return(
         <>
             <p>Search Text
-            <input type="text" onChange={onSearchTextHendleChange} ></input></p>
+            <input type="text" value={val} onChange={onSearchTextHendleChange} ></input></p>
         </>   
     )
 };

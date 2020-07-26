@@ -22,9 +22,9 @@ function handleSearchText(searhTxt)
     else
     {      
       
-      const newList =[...List];      
-      setListArray(newList.filter(t => t.includes(searhTxt)));
-      console.log(List);
+     // const newList =[...List];      
+      setListArray(List.filter(t => t.includes(searhTxt)));
+     // console.log(List);
     }
 }
 
@@ -32,7 +32,7 @@ function handleSearchText(searhTxt)
   return (
     <div>
       <SearchTextBox  hendleSearchText ={handleSearchText}/>
-      <ListItems list={List}  ></ListItems>    
+      <ListItems list={List} ></ListItems>    
       
     </div>
   )
