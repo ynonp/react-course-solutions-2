@@ -3,20 +3,18 @@ import React, { useState } from 'react';
 
 export default function SearchTextBox(props)
 {
-    const {hendleSearchText} = props;
-    const [val,setval] = useState('');
-    function onSearchTextHendleChange(e){
+    const {setSearchText} = props;
+ 
+    function onTextChange(e){
       
-        const newVal=e.target.value
-        setval(val => newVal);
-        hendleSearchText(newVal);
-        
+        const newVal=e.target.value;      
+        setSearchText(newVal);        
     }
 
     return(
         <>
             <p>Search Text
-            <input type="text" value={val} onChange={onSearchTextHendleChange} ></input></p>
+            <input type="text" onChange={onTextChange} ></input></p>
         </>   
     )
 };
