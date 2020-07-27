@@ -6,21 +6,22 @@ import { useState } from 'react';
 import '../css/main.css';
 
 const List = ['Jerusalem', 'Tel Aviv', 'Raanana', 'Ramat Gan' ,'Amman',
-                   'Zarqa', 'Irbid', 'Aqaba','Damascus', 'Hama', 'Idlib', 
-                   'Raqqa', 'Cairo', 'Alexandria', 'Giza'];
+  'Zarqa', 'Irbid', 'Aqaba','Damascus', 'Hama', 'Idlib', 
+  'Raqqa', 'Cairo', 'Alexandria', 'Giza'];
 
 
 const App = () => {
 
-const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('');
 
 
 
   return (
     <div>
+      <button onClick={() => setSearchText('')}>Reset Filter</button>
       <SearchTextBox  setSearchText ={setSearchText}/>
       <ListItems list={List} searchText={searchText} ></ListItems>    
-      
+
     </div>
   )
 };
